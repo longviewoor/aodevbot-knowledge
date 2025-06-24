@@ -21,7 +21,7 @@ jobs:
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install weaviate-client openai markdown-it-py
+          pip install -r requirements.txt
 
       - name: Run Sync Script
         env:
