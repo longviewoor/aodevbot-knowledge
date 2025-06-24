@@ -19,6 +19,18 @@ AO is a decentralized computer network built on top of Arweave that enables deve
 - Each Q&A pair must start with `### Question`.
 - The answer should immediately follow the heading.
 
+## 🏷️ Tagging Guidelines
+
+You can add **optional tags (keywords)** to each Q&A to help categorize and filter content. Tags improve search relevance and enable topic-based filtering.
+
+```md
+### What is AO?
+
+**Tags**: ao, arweave, general
+
+AO is a decentralized computer network built on top of Arweave that enables developers to create scalable, permanent applications ...
+```
+
 ## ✍️ Content Contribution Guidelines
 
 To ensure high quality and useful AI responses, please follow these rules:
