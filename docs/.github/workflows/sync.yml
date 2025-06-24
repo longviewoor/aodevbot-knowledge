@@ -1,0 +1,31 @@
+name: Sync Q&As and Glossary to Weaviate
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sync-weaviate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install weaviate-client openai markdown-it-py
+
+      - name: Run Sync Script
+        env:
+          WEAVIATE_URL: ${{ secrets.WEAVIATE_URL }}
+          WEAVIATE_API_KEY: ${{ secrets.WEAVIATE_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: python sync.py
