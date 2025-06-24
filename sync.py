@@ -2,6 +2,7 @@ import os
 from pathlib import Path
 import weaviate
 from weaviate.classes.init import Auth
+from weaviate.classes.config import Configure
 from openai import OpenAI
 from markdown_it import MarkdownIt
 
@@ -14,26 +15,32 @@ weaviate_api_key = os.environ["WEAVIATE_API_KEY"]
 openai_api_key = os.environ["OPENAI_API_KEY"]
 
 client = weaviate.connect_to_weaviate_cloud(
-    cluster_url=weaviate_url,  # Replace with your Weaviate Cloud URL
-    auth_credentials=Auth.api_key(weaviate_api_key),  # Replace with your Weaviate Cloud key
-    headers={'X-OpenAI-Api-key': openai_api_key}  # Replace with your OpenAI API key
+    cluster_url=weaviate_url,
+    auth_credentials=Auth.api_key(weaviate_api_key),
+    headers={'X-OpenAI-Api-key': openai_api_key}
 )
 
 md = MarkdownIt()
 
 # Ensure schema is in place
 def ensure_schema():
-    if not client.schema.contains({"classes": [{"class": "QAEntry"}]}):
-        client.schema.create_class({
-            "class": "QAEntry",
-            "vectorizer": "none",
-            "properties": [
-                {"name": "question", "dataType": ["text"]},
-                {"name": "answer", "dataType": ["text"]},
-                {"name": "source", "dataType": ["text"]},
-                {"name": "tags", "dataType": ["text[]"]}
+    try:
+        # Check if collection exists
+        collection = client.collections.get("QAEntry")
+        print("Collection 'QAEntry' already exists")
+    except weaviate.exceptions.UnexpectedStatusCodeException:
+        # Create collection if it doesn't exist
+        client.collections.create(
+            name="QAEntry",
+            vectorizer_config=Configure.Vectorizer.none(),  # We'll provide our own vectors
+            properties=[
+                weaviate.classes.config.Property(name="question", data_type=weaviate.classes.config.DataType.TEXT),
+                weaviate.classes.config.Property(name="answer", data_type=weaviate.classes.config.DataType.TEXT),
+                weaviate.classes.config.Property(name="source", data_type=weaviate.classes.config.DataType.TEXT),
+                weaviate.classes.config.Property(name="tags", data_type=weaviate.classes.config.DataType.TEXT_ARRAY)
             ]
-        })
+        )
+        print("Created collection 'QAEntry'")
 
 # Embed text using OpenAI
 def embed(text: str):
@@ -70,9 +77,6 @@ def extract_tags_and_answer(answer_lines):
         if line.lower().startswith("**tags**:"):
             tag_line = line.split(":", 1)[1]
             tags = [t.strip() for t in tag_line.split(",")]
-        elif "<!-- tags:" in line.lower():
-            tag_line = line.lower().split("<!-- tags:", 1)[1].split("-->")[0]
-            tags = [t.strip() for t in tag_line.split(",")]
         else:
             content_lines.append(line.strip())
 
@@ -84,29 +88,35 @@ def upload_entry(question, raw_answer, source):
     tags, clean_answer = extract_tags_and_answer(answer_lines)
     vector = embed(question)
 
-    client.data_object.create(
-        data_object={
+    collection = client.collections.get("QAEntry")
+    
+    collection.data.insert(
+        properties={
             "question": question,
             "answer": clean_answer,
             "tags": tags,
             "source": source
         },
-        class_name="QAEntry",
         vector=vector
     )
 
 # Main sync function
 def sync_qas():
-    ensure_schema()
-    docs_dir = Path(__file__).resolve().parent / "docs"
-    md_files = list(docs_dir.glob("*.md"))
+    try:
+        ensure_schema()
+        docs_dir = Path(__file__).resolve().parent / "docs"
+        md_files = list(docs_dir.glob("*.md"))
 
-    for file_path in md_files:
-        content = file_path.read_text(encoding="utf-8")
-        qas = parse_qa_markdown(content)
+        for file_path in md_files:
+            content = file_path.read_text(encoding="utf-8")
+            qas = parse_qa_markdown(content)
 
-        for question, raw_answer in qas:
-            upload_entry(question, raw_answer, str(file_path.relative_to(docs_dir)))
+            for question, raw_answer in qas:
+                upload_entry(question, raw_answer, str(file_path.relative_to(docs_dir)))
+                print(f"Uploaded Q&A: {question[:50]}...")
+
+    finally:
+        client.close()
 
 if __name__ == "__main__":
     sync_qas()
