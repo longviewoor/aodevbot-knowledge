@@ -1,15 +1,22 @@
 import os
 from pathlib import Path
 import weaviate
+from weaviate.classes.init import Auth
 from openai import OpenAI
 from markdown_it import MarkdownIt
 
 # Setup clients
 openai = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
 
-client = weaviate.Client(
-    url=os.environ["WEAVIATE_URL"],
-    auth_client_secret=weaviate.AuthApiKey(os.environ["WEAVIATE_API_KEY"]) if os.getenv("WEAVIATE_API_KEY") else None,
+# Best practice: store your credentials in environment variables
+weaviate_url = os.environ["WEAVIATE_URL"]
+weaviate_api_key = os.environ["WEAVIATE_API_KEY"]
+openai_api_key = os.environ["OPENAI_APIKEY"]
+
+client = weaviate.connect_to_weaviate_cloud(
+    cluster_url=weaviate_url,  # Replace with your Weaviate Cloud URL
+    auth_credentials=Auth.api_key(weaviate_api_key),  # Replace with your Weaviate Cloud key
+    headers={'X-OpenAI-Api-key': openai_api_key}  # Replace with your OpenAI API key
 )
 
 md = MarkdownIt()
