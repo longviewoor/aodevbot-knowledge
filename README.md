@@ -25,8 +25,7 @@ You can add **optional tags (keywords)** to each Q&A to help categorize and filt
 
 ```md
 ### What is AO?
-
-**Tags**: ao, arweave, general
+<!-- tags: ao, arweave, general -->
 
 AO is a decentralized computer network built on top of Arweave that enables developers to create scalable, permanent applications ...
 ```
