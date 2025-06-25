@@ -3,8 +3,12 @@ import json
 from pathlib import Path
 from uuid import UUID
 import weaviate
+from weaviate.util import generate_uuid5  # Generate a deterministic ID
 from weaviate.classes.init import Auth
 from weaviate.classes.config import Configure, Property, DataType
+# from dotenv import load_dotenv
+
+# load_dotenv()
 
 weaviate_url = os.environ["WEAVIATE_URL"]
 weaviate_api_key = os.environ["WEAVIATE_API_KEY"]
@@ -40,7 +44,6 @@ def upload_entry(entry, source):
     question = entry.get("question", "").strip()
     answer = entry.get("answer", "").strip()
     tags = entry.get("tags", [])
-    uuid = entry.get("uuid")
 
     if not question or not answer:
         print("Skipping invalid entry (missing question or answer)")
@@ -50,12 +53,14 @@ def upload_entry(entry, source):
         "question": question,
         "answer": answer,
         "tags": tags,
-        "source": source,
-        "uuid": uuid
+        "source": source
     }
 
     collection = client.collections.get(collection_name)
-    collection.data.insert(properties=properties)
+    collection.data.insert(
+        properties=properties,
+        uuid=generate_uuid5(properties['question'])
+    )
 
 def sync_qas():
     try:
@@ -72,8 +77,11 @@ def sync_qas():
                     continue
 
             for entry in qa_entries:
-                upload_entry(entry, str(file_path.relative_to(docs_dir)))
-                print(f"Uploaded Q&A: {entry.get('question', '')[:50]}...")
+                try:
+                    upload_entry(entry, str(file_path.relative_to(docs_dir)))
+                    print(f"Uploaded Q&A: {entry.get('question', '')[:50]}...")
+                except Exception as e:
+                    print(f"Error uploading entry {entry}: {e}")
 
     finally:
         client.close()
