@@ -17,7 +17,6 @@ idna==3.10
 jiter==0.10.0
 markdown-it-py==3.0.0
 mdurl==0.1.2
-openai==1.91.0
 packaging==25.0
 protobuf==6.31.1
 pycparser==2.22
