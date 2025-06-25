@@ -5,8 +5,23 @@
     "tags": ["ao", "arweave", "general"]
   },
   {
+    "question": "What does \"ao\" stand for?",
+    "answer": "AO stands for Actor-Oriented. AO is a decentralized computer network built on top of Arweave that enables developers to create scalable, permanent applications. [Video](https://video.twimg.com/amplify_video/1935699115926761472/vid/avc1/1280x720/Yy8kie8Y5_WS5Atm.mp4?tag=14)",
+    "tags": ["ao", "protocol", "definition"]
+  },
+  {
     "question": "What is Arweave?",
     "answer": "Arweave is a blockchain-like protocol designed for permanent data storage. It allows users to store data indefinitely by incentivizing miners to maintain the network.",
     "tags": ["arweave", "blockchain", "storage"]
+  },
+  {
+    "question": "What are AO processes?",
+    "answer": "An AO process is a smart contract deployed on AO. Processes hold state, receive messages, and have functions to handle different interactions. [More info](https://cookbook_ao.arweave.net/concepts/processes.html)",
+    "tags": ["ao", "processes", "smart contracts"]
+  },
+  {
+    "question": "What is an Arweave Wallet?",
+    "answer": "An Arweave wallet is a crypto wallet which stores and holds $AR tokens. A wallet can be used to deploy AO processes, and upload data to be stored on Arweave. [More info](https://docs.arweave.org/developers/wallets/wallet-faq)",
+    "tags": ["arweave", "wallet", "crypto"]
   }
 ]
