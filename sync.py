@@ -16,7 +16,7 @@ client = weaviate.connect_to_weaviate_cloud(
     headers={'X-OpenAI-Api-key': openai_api_key}
 )
 
-collection_name = "QuestionAnswer"
+collection_name = "QAEntry"
 
 def ensure_schema():
     try:
