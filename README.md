@@ -15,14 +15,12 @@ All Q&A content should be written in **JSON** files (`.json`) located in the `do
   {
     "question": "What is AO?",
     "answer": "AO is a decentralized computer network built on top of Arweave that enables developers to create scalable, permanent applications.",
-    "tags": ["ao", "arweave", "general"],
-    "uuid": "8187e94f-c0a2-4eaa-a3aa-b32d74f72e13"
+    "tags": ["ao", "arweave", "general"]
   },
   {
     "question": "What is Arweave?",
     "answer": "Arweave is a blockchain-like protocol designed for permanent data storage. It allows users to store data indefinitely by incentivizing miners to maintain the network.",
-    "tags": ["arweave", "blockchain", "storage"],
-    "uuid": "de1f6b78-8b92-4f6a-96ca-5cc171e2b7e0"
+    "tags": ["arweave", "blockchain", "storage"]
   }
 ]
 ```
@@ -31,7 +29,6 @@ All Q&A content should be written in **JSON** files (`.json`) located in the `do
   - `"question"`: The question string (required)
   - `"answer"`: The answer string (required)
   - `"tags"`: An array of keywords (optional but recommended)
-  - `"uuid"`: A unique identifier (required for syncing)
 
 ## 🏷️ Tagging Guidelines
 
