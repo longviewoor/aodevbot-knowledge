@@ -6,29 +6,40 @@ Each commit to this repository automatically syncs new or updated Q&A entries in
 
 ## 📄 Format Guidelines
 
-All Q&A content should be written in **Markdown** files (`.md`) located in the `docs/` directory. Each question should start with a level-3 heading (`###`), followed by its answer in plain text or Markdown format.
+All Q&A content should be written in **JSON** files (`.json`) located in the `docs/` directory. Each file contains an array of Q&A entries.
 
 ### ✅ Example Format
 
+```json
+[
+  {
+    "question": "What is AO?",
+    "answer": "AO is a decentralized computer network built on top of Arweave that enables developers to create scalable, permanent applications.",
+    "tags": ["ao", "arweave", "general"],
+    "uuid": "8187e94f-c0a2-4eaa-a3aa-b32d74f72e13"
+  },
+  {
+    "question": "What is Arweave?",
+    "answer": "Arweave is a blockchain-like protocol designed for permanent data storage. It allows users to store data indefinitely by incentivizing miners to maintain the network.",
+    "tags": ["arweave", "blockchain", "storage"],
+    "uuid": "de1f6b78-8b92-4f6a-96ca-5cc171e2b7e0"
+  }
+]
 ```
-### What is AO?
 
-AO is a decentralized computer network built on top of Arweave that enables developers to create scalable, permanent applications ...
-```
-
-- Each Q&A pair must start with `### Question`.
-- The answer should immediately follow the heading.
+- Each entry must contain:
+  - `"question"`: The question string (required)
+  - `"answer"`: The answer string (required)
+  - `"tags"`: An array of keywords (optional but recommended)
+  - `"uuid"`: A unique identifier (required for syncing)
 
 ## 🏷️ Tagging Guidelines
 
-You can add **optional tags (keywords)** to each Q&A to help categorize and filter content. Tags improve search relevance and enable topic-based filtering.
+Tags help categorize and filter content. They improve search relevance and allow topic-based filtering in the AI system.
 
-```md
-### What is AO?
-<!-- tags: ao, arweave, general -->
-
-AO is a decentralized computer network built on top of Arweave that enables developers to create scalable, permanent applications ...
-```
+- Use lowercase keywords.
+- Keep tags relevant and limited (2–5 tags is ideal).
+- Use consistent terminology across entries (e.g., "arweave", not "Arweave").
 
 ## ✍️ Content Contribution Guidelines
 
@@ -38,9 +49,8 @@ To ensure high quality and useful AI responses, please follow these rules:
 - ✅ Keep answers **short and focused** (1–3 paragraphs, ideally 100–300 tokens).
 - ✅ Use **clear language** — prioritize helpfulness and accuracy.
 - ✅ Break large concepts into **multiple Q&As** if needed.
-- ✅ Use simple Markdown formatting (`**bold**`, lists, links) if it improves clarity.
 
 ### ❌ Don’t
 - ❌ Don’t write overly long answers (>400 words).
-- ❌ Don’t include multiple questions in one heading.
-- ❌ Don’t include unrelated content or metadata.
+- ❌ Don’t include multiple questions in one entry.
+- ❌ Don’t add unrelated metadata or extra fields.
