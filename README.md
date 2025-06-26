@@ -1,14 +1,14 @@
 # ✨ AO DevBot Knowledge Base
 
-This repository contains a structured collection of **Question & Answer (Q&A)** entries used to power an AI system backed by Weaviate and RAG (Retrieval-Augmented Generation).
+This repository contains a structured collection of **Question & Answer (Q&A)** entries and **Tooltip** entries used to power an AI system backed by Weaviate and RAG (Retrieval-Augmented Generation).
 
-Each commit to this repository automatically syncs new or updated Q&A entries into our vector database using GitHub Actions and OpenAI embeddings. The AI backend uses this data to answer user queries with high relevance.
+Each commit to this repository automatically syncs new or updated Q&A and Tooltip entries into our vector database using GitHub Actions and OpenAI embeddings. The AI backend uses this data to answer user queries with high relevance.
 
 ## 📄 Format Guidelines
 
-All Q&A content should be written in **JSON** files (`.json`) located in the `docs/` directory. Each file contains an array of Q&A entries.
+All Q&A content should be written in **JSON** files (`.json`) located in the `docs/faq/` directory. Each file contains an array of Q&A entries.
 
-### ✅ Example Format
+### ✅ Q&A Example Format
 
 ```json
 [
@@ -29,6 +29,38 @@ All Q&A content should be written in **JSON** files (`.json`) located in the `do
   - `"question"`: The question string (required)
   - `"answer"`: The answer string (required)
   - `"tags"`: An array of keywords (optional but recommended)
+
+---
+
+## 🏷️ Tooltip Format
+
+Tooltip content should be written in a single **JSON** file at `docs/tooltips.json`. This file contains an array of tooltip entries.
+
+### ✅ Tooltip Example Format
+
+```json
+[
+  {
+    "term": "Process",
+    "headline": "A process is a smart contract deployed on AO",
+    "definition": "Processes hold state, receive messages, and have functions to handle different interactions."
+  },
+  {
+    "term": "Permaweb",
+    "headline": "The Permaweb is a decentralized and immutable web built on top of Arweave",
+    "definition": "The Permaweb refers to web applications and dApps built on AO and Arweave, accessible just like the normal web - but immutable and long-lasting.",
+    "link": "https://arweave.net/0eRcI5PpUQGIDcBGTPCcANkUkgY85a1VGf0o7Y-q01o/#/en/the-permaweb"
+  }
+]
+```
+
+- Each tooltip entry must contain:
+  - `"term"`: The glossary term (required)
+  - `"headline"`: A short headline or summary (required)
+  - `"definition"`: The definition or explanation (required)
+  - `"link"`: An external URL for more info (optional)
+
+---
 
 ## 🏷️ Tagging Guidelines
 
