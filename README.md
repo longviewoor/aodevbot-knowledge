@@ -30,8 +30,6 @@ All Q&A content should be written in **JSON** files (`.json`) located in the `do
   - `"answer"`: The answer string (required)
   - `"tags"`: An array of keywords (optional but recommended)
 
----
-
 ## 🏷️ Tooltip Format
 
 Tooltip content should be written in a single **JSON** file at `docs/tooltips.json`. This file contains an array of tooltip entries.
@@ -59,8 +57,6 @@ Tooltip content should be written in a single **JSON** file at `docs/tooltips.js
   - `"headline"`: A short headline or summary (required)
   - `"definition"`: The definition or explanation (required)
   - `"link"`: An external URL for more info (optional)
-
----
 
 ## 🏷️ Tagging Guidelines
 
