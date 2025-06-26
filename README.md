@@ -66,16 +66,14 @@ Tags help categorize and filter content. They improve search relevance and allow
 - Keep tags relevant and limited (2–5 tags is ideal).
 - Use consistent terminology across entries (e.g., "arweave", not "Arweave").
 
-## ✍️ Content Contribution Guidelines
-
-To ensure high quality and useful AI responses, please follow these rules:
-
-### ✅ Do
-- ✅ Keep answers **short and focused** (1–3 paragraphs, ideally 100–300 tokens).
-- ✅ Use **clear language** — prioritize helpfulness and accuracy.
-- ✅ Break large concepts into **multiple Q&As** if needed.
-
-### ❌ Don’t
-- ❌ Don’t write overly long answers (>400 words).
-- ❌ Don’t include multiple questions in one entry.
-- ❌ Don’t add unrelated metadata or extra fields.
+## DevBot Knowledge Tips & Guidelines:
+- Content supports **Markdown**!  
+   - You can include images: `![alt text](image-url)` (always use descriptive alt text).  
+   - You can add links to videos or other resources.  
+   - Use lists, code blocks, and other Markdown features for clarity.
+- **Keep answers short and focused** (1–3 paragraphs, ideally 100–300 tokens).
+- **Use clear language** — prioritize helpfulness and accuracy.
+- Break large concepts into **multiple Q&As** if needed.
+- **Do not** write overly long answers (>400 words).
+- **Do not** include multiple questions in one entry.
+- **Do not** add unrelated metadata or extra fields.
