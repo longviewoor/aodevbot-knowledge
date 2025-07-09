@@ -23,5 +23,10 @@
     "question": "What is an Arweave Wallet?",
     "answer": "An Arweave wallet is a crypto wallet which stores and holds $AR tokens. A wallet can be used to deploy AO processes, and upload data to be stored on Arweave.",
     "tags": ["arweave", "wallet", "crypto"]
+  },
+  {
+    "question": "How does AO work with Arweave?",
+    "answer": "AO is built on top of Arweave's permanent storage network, using it as the base layer for process and message storage.\n\nAll messages sent between AO processes are stored on Arweave. This creates an immutable audit trail of all interactions, and enables AO's \"holographic state\" - the message history can be replayed/executed in order to get the state of any process.\n\nThe relationship is symbiotic: Arweave provides the **storage layer**, while AO provides the **computational layer**. AO processes can also directly access data stored on Arweave through assignment mechanisms - you can pull in any Arweave transaction as input to your process computation.\n\nThis makes AO particularly powerful for applications requiring long-term data integrity, auditability, or decentralized computation that needs to persist beyond the lifetime of any particular infrastructure.",
+    "tags": ["ao", "arweave", "storage", "holographic state"]
   }
 ]
