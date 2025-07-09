@@ -28,5 +28,10 @@
     "question": "How does AO work with Arweave?",
     "answer": "AO is built on top of Arweave's permanent storage network, using it as the base layer for process and message storage.\n\nAll messages sent between AO processes are stored on Arweave. This creates an immutable audit trail of all interactions, and enables AO's \"holographic state\" - the message history can be replayed/executed in order to get the state of any process.\n\nThe relationship is symbiotic: Arweave provides the **storage layer**, while AO provides the **computational layer**. AO processes can also directly access data stored on Arweave through assignment mechanisms - you can pull in any Arweave transaction as input to your process computation.\n\nThis makes AO particularly powerful for applications requiring long-term data integrity, auditability, or decentralized computation that needs to persist beyond the lifetime of any particular infrastructure. [Video](https://video.twimg.com/amplify_video/1930640133902282752/vid/avc1/1280x720/KnwbT2Vyqh5jLMly.mp4?tag=14)",
     "tags": ["ao", "arweave", "storage", "holographic state"]
+  },
+  {
+    "question": "What is holographic state on AO?",
+    "answer": "On AO, every single interaction with an AO process is stored as a transaction on Arweave. If you have a process and all of its interaction history, these can be used to “reconstruct” the current state of a process.\n\nHolographic state refers to the concept that no global shared state of processes is stored on AO. Instead, AO nodes compute state on demand based on the history of a process. Since AO processes are deterministic, the current state is essentially a \"projection\" of all processed messages over time (like a hologram). \n\nAs there is no global shared state system, processes are concerned with their own state and interact with each other through a message passing system. This enables true parallel execution of processes on AO. [Video](https://video.twimg.com/amplify_video/1930640133902282752/vid/avc1/1280x720/KnwbT2Vyqh5jLMly.mp4?tag=14)",
+    "tags": ["ao", "holographic state"]
   }
 ]
