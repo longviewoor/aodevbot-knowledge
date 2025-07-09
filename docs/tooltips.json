@@ -13,7 +13,7 @@
   {
     "term": "Message",
     "headline": "Messages are how processes on AO communicate",
-    "definition": "Every interaction with a process on AO is sent as a message - each one verifiable, and stored as a transaction on Arweave.",
+    "definition": "Every interaction with a process on AO is sent as a message - each one verifiable, and stored as a transaction on Arweave."
   },
   {
     "term": "Handlers",
