@@ -42,5 +42,11 @@
     "headline": "Lua is the programming language used for AO processes",
     "definition": "Lua is a dynamically-typed, lightweight programming language used to write processes on AO.",
     "link": "https://learnxinyminutes.com/lua/"
+  },
+  {
+    "term": "Wander Wallet",
+    "headline": "Browser extension and mobile wallet for Arweave and AO",
+    "definition": "Wander is a non-custodial Arweave and AO native wallet with extensive features. It's available as a browser extension and mobile app.",
+    "link": "https://wander.app/"
   }
 ]
