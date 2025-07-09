@@ -9,5 +9,38 @@
     "headline": "The Permaweb is a decentralized and immutable web built on top of Arweave",
     "definition": "The Permaweb refers to web applications and dApps built on AO and Arweave, accessible just like the normal web - but immutable and long-lasting.",
     "link": "https://arweave.net/0eRcI5PpUQGIDcBGTPCcANkUkgY85a1VGf0o7Y-q01o/#/en/the-permaweb"
+  },
+  {
+    "term": "Message",
+    "headline": "Messages are how processes on AO communicate",
+    "definition": "Every interaction with a process on AO is sent as a message - each one verifiable, and stored as a transaction on Arweave.",
+  },
+  {
+    "term": "Handlers",
+    "headline": "AO uses handlers to respond to different types of interactions (messages)",
+    "definition": "Processes on AO contain handlers, which are functions written to \"handle\" different types of interactions."
+  },
+  {
+    "term": "Arweave Wallet",
+    "headline": "AO processes are deployed using an Arweave wallet",
+    "definition": "An Arweave wallet is a crypto wallet which stores and holds $AR tokens. A wallet can be used to deploy AO processes, and upload data to Arweave."
+  },
+  {
+    "term": "AOS",
+    "headline": "AOS is a system used to interact with AO",
+    "definition": "Developers can use AOS to deploy, execute, and interact with processes on AO. It includes common Lua modules to get started building processes.",
+    "link": "https://cookbook_ao.arweave.net/guides/aos/intro.html"
+  },
+  {
+    "term": "Arweave",
+    "headline": "Arweave is the storage layer powering AO",
+    "definition": "Every single AO process and message is stored and read from Arweave. It acts as the state layer for each process, while AO nodes read from it and perform computation.",
+    "link": "https://www.arweave.org/"
+  },
+  {
+    "term": "Lua",
+    "headline": "Lua is the programming language used for AO processes",
+    "definition": "Lua is a dynamically-typed, lightweight programming language used to write processes on AO.",
+    "link": "https://learnxinyminutes.com/lua/"
   }
 ]
