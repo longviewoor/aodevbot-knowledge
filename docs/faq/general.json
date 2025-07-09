@@ -16,12 +16,12 @@
   },
   {
     "question": "What are AO processes?",
-    "answer": "An AO process is a smart contract deployed on AO. Processes hold state, receive messages, and have functions to handle different interactions. [More info](https://cookbook_ao.arweave.net/concepts/processes.html)",
+    "answer": "An AO process is a smart contract deployed on AO. Processes hold state, receive messages, and have functions to handle different interactions.",
     "tags": ["ao", "processes", "smart contracts"]
   },
   {
     "question": "What is an Arweave Wallet?",
-    "answer": "An Arweave wallet is a crypto wallet which stores and holds $AR tokens. A wallet can be used to deploy AO processes, and upload data to be stored on Arweave. [More info](https://docs.arweave.org/developers/wallets/wallet-faq)",
+    "answer": "An Arweave wallet is a crypto wallet which stores and holds $AR tokens. A wallet can be used to deploy AO processes, and upload data to be stored on Arweave.",
     "tags": ["arweave", "wallet", "crypto"]
   }
 ]
