@@ -38,10 +38,82 @@
     "link": "https://www.arweave.org/"
   },
   {
+    "term": "ArDrive",
+    "headline": "Permanent cloud storage platform",
+    "definition": "ArDrive is like your favourite cloud storage app, but pay once, store permanently. Users can upload files, pages, and more.",
+    "link": "https://ardrive.io/"
+  },
+  {
+    "term": "AOX",
+    "headline": "AOX is a cross-chain bridge for AO and Arweave",
+    "definition": "Users can bring wrapped assets in and out of the AO ecosystem, and can bridge assets from both Arweave and Ethereum.",
+    "link": "https://aox.xyz"
+  },
+  {
+    "term": "Astro",
+    "headline": "AstroUSD ($USDA) is AO's first native stablecoin",
+    "definition": "Astro aims to solve liquidity fragementation by acting a a universal conversion layer for different kinds of stablecoins bridged to AO.",
+    "link": "https://astrousd.com"
+  },
+  {
+    "term": "Beacon Wallet",
+    "headline": "Beacon is a native iOS mobile wallet for AO and Arweave",
+    "definition": "Beacon includes features such as 2FA, multi-sigs, built-in app integrations, and social recovery.",
+    "link": "https://beaconwallet.app"
+  },
+  {
+    "term": "BetterIDEa",
+    "headline": "A web-based IDE for developing applications on AO",
+    "definition": "BetterIDEa is a web-based IDE for developing applications on AO. It has built-in support for the AO Package Manager (APM) and other features for developing processes on AO.",
+    "link": "https://betteridea.dev"
+  },
+  {
+    "term": "Botega",
+    "headline": "Botega is a decentralized exchange (DEX) and DeFi platform built on AO",
+    "definition": "It is fully decentralized with the frontend stored on Arweave and backend processes on AO, and is focused on supporting sophisticated strategies and autonomous trading agents.",
+    "link": "https://botega.arweave.net"
+  },
+  {
+    "term": "Dexi",
+    "headline": "Dexi is financial data platform for AO",
+    "definition": "Dexi aggregates data from liquidity pools agents deployed on AO, and siplays data on trading volume, asset prices, fluctuations, and more.",
+    "link": "https://dexi.arweave.net"
+  },
+  {
+    "term": "LiquidOps",
+    "headline": "LiquidOps is a lending and borrowing platform built on AO",
+    "definition": "Users can accrue interest by providing liquidty, and lenders can take overcollateralized loans from the protocol.",
+    "link": "https://liquidops.io"
+  },
+  {
+    "term": "Load Network",
+    "headline": "Load is an \"onchain data center\" focused on scaling EVM storage",
+    "definition": "Load Network is focused on scaling EVM storage via Arweave, and building out other developer solutions and infrastructure for uploading data to the Permaweb.",
+    "link": "https://www.load.network/"
+  },
+  {
     "term": "Lua",
     "headline": "Lua is the programming language used for AO processes",
     "definition": "Lua is a dynamically-typed, lightweight programming language used to write processes on AO.",
     "link": "https://learnxinyminutes.com/lua/"
+  },
+  {
+    "term": "Permaswap",
+    "headline": "Permaswap is a decentralized exchange (DEX) in the AO ecosystem",
+    "definition": "Users can swap between assets such as AO, wrapped AR, and more, and can place limit orders and set up a custom slippage amount.",
+    "link": "https://permaswap.network"
+  },
+  {
+    "term": "PerplexFi",
+    "headline": "A perpetual trading platform built on AO",
+    "definition": "Perplex is a perpetual futures trading platform built fully onchain, on AO. Users can trade perpetual contracts with leverage, provide liquidty and earn yield from pools, and more.",
+    "link": "https://perplex.finance"
+  },
+  {
+    "term": "ProtocolLand",
+    "headline": "Onchain hosting platform for code repositories",
+    "definition": "ProtocolLand is like GitHub, but built on Arweave and AO. Users can store their code repositories and deploy websites and apps through built-in integrations.",
+    "link": "https://protocol.land"
   },
   {
     "term": "Wander Wallet",
