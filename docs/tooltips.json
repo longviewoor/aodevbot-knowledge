@@ -44,16 +44,40 @@
     "link": "https://ardrive.io/"
   },
   {
+    "term": "AOLink",
+    "headline": "Explorer for AO processes",
+    "definition": "AOLink is popular explorer for viewing AO processes, messages, and statistics.",
+    "link": "https://ao.link"
+  },
+  {
     "term": "AOX",
     "headline": "AOX is a cross-chain bridge for AO and Arweave",
     "definition": "Users can bring wrapped assets in and out of the AO ecosystem, and can bridge assets from both Arweave and Ethereum.",
     "link": "https://aox.xyz"
   },
   {
+    "term": "Apus Network",
+    "headline": "GPU network providing computing power to AO",
+    "definition": "Apus Network is a GPU network providing GPU computing power to AO, largely focused on decentralized AI applications.",
+    "link": "https://apus.network"
+  },
+  {
     "term": "Astro",
     "headline": "AstroUSD ($USDA) is AO's first native stablecoin",
     "definition": "Astro aims to solve liquidity fragementation by acting a a universal conversion layer for different kinds of stablecoins bridged to AO.",
     "link": "https://astrousd.com"
+  },
+  {
+    "term": "Basejump",
+    "headline": "A platform for users to create their own games",
+    "definition": "Basejump is a platform for users to create and play their own games with transferable assets. Basejump's ACTION substrate is built on top of AO, and data/metadata is settled on Arweave.",
+    "link": "https://basejump.xyz"
+  },
+  {
+    "term": "Bazar",
+    "headline": "Atomic Asset (NFT) marketplace built on AO",
+    "definition": "Bazar is an Atomic Asset (NFT) marketplace and launchpad built on AO, with assets and their associated metadata stored on Arweave.",
+    "link": "https://bazar.arweave.net"
   },
   {
     "term": "Beacon Wallet",
@@ -114,6 +138,30 @@
     "headline": "Onchain hosting platform for code repositories",
     "definition": "ProtocolLand is like GitHub, but built on Arweave and AO. Users can store their code repositories and deploy websites and apps through built-in integrations.",
     "link": "https://protocol.land"
+  },
+  {
+    "term": "RandAO",
+    "headline": "Verifiable Random Function (VRF) protocol on AO",
+    "definition": "RandAO is a Verifiable Random Function (VRF) protocol providing decentralized, provable randomness to the AO ecosystem.",
+    "link": "https://www.randao.net/"
+  },
+  {
+    "term": "StarGrid Battle Tactics",
+    "headline": "A popular turn-based tactics game",
+    "definition": "StarGrid is a turn-based tactics game built fully onchain, on AO. StarGrid is free to play, and supports logins through Wander and Metamask.",
+    "link": "https://stargrid.arweave.net"
+  },
+  {
+    "term": "Vento",
+    "headline": "DEX aggregator for AO",
+    "definition": "Vento is a DEX aggregator for AO. Vento was created by Vela Ventures, and aims to provide users with efficient routing for swaps on AO.",
+    "link": "https://ventoswap.com"
+  },
+  {
+    "term": "ViewBlock",
+    "headline": "A popular block explorer for Arweave",
+    "definition": "Viewblock is one of the most popular block explorers for Arweave, and provides information on transactions, nodes, Arweave's storage endowment, and more.",
+    "link": "https://viewblock.io"
   },
   {
     "term": "Wander Wallet",
